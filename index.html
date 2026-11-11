@@ -161,6 +161,7 @@ main{position:relative;z-index:1}
 .forbid{margin-top:24px}
 .swatches{display:flex;justify-content:center;gap:14px;margin-top:12px}
 .swatches i{width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.3);position:relative}
+.swatches i.silver{background:linear-gradient(135deg,#f4f4f4 0%,#9a9a9a 30%,#ffffff 50%,#8c8c8c 72%,#e6e6e6 100%)}
 .swatches i::after{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:3px;background:#fff;border-radius:2px;transform:translateX(-50%) rotate(45deg);box-shadow:0 0 0 1.5px var(--fuc)}
 .forbid small{display:block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
 .polaroid.solo{display:block;width:62%;max-width:260px;margin-top:44px}
@@ -391,10 +392,10 @@ footer .credit{margin-top:26px}
       <p>Ven lista o listo para brillar en la pista.</p>
       <div class="forbid">
         <span class="label fuc">Colores reservados · No usar</span>
-        <div class="swatches" aria-label="Colores prohibidos para invitados: fucsia, negro y gris">
-          <i style="background:#fe0084"></i><i style="background:#050206"></i><i style="background:#908d8e"></i>
+        <div class="swatches" aria-label="Colores prohibidos para invitados: fucsia y plateado">
+          <i style="background:#fe0084"></i><i class="silver"></i>
         </div>
-        <small>Fucsia · Negro · Gris</small>
+        <small>Fucsia · Plateado</small>
       </div>
       <button class="polaroid tape solo left" style="--r:-3deg" data-i="2"><img src="assets/telefono.jpg" alt="Helen con un teléfono retro" loading="lazy"><span>¿Aló?</span></button>
     </div>
@@ -409,7 +410,6 @@ footer .credit{margin-top:26px}
 
       <div class="letter" style="text-align:left">
         <span class="stamp">De: Helen</span>
-        <p>Con mucha alegría quisiera compartir este momento tan especial con ustedes y con el corazón lleno de alegría y gratitud…</p>
         <p>Quiero compartir con ustedes uno de los momentos más hermosos de mi vida: la celebración de mis XV años. Es para mí un honor contar con tu presencia para celebrar juntos.</p>
         <p>A mis padres, gracias por su amor incondicional, por cada esfuerzo, por guiar mis pasos y por hacer posible este sueño. Gracias a Dios por bendecirme con una familia maravillosa y por permitirme vivir esta etapa rodeada de tanto amor.</p>
         <p>Hoy comienza una nueva etapa llena de sueños, ilusiones y nuevas aventuras.</p>

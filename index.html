@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>XV Helen · Retro</title>
+<meta name="description" content="Invitación a los XV años de Helen V. Precilla Muñoz · 12 de diciembre de 2026 · Hotel El Panamá, Salón Portobelo.">
+<meta property="og:title" content="Mis XV · Helen">
+<meta property="og:description" content="Sábado 12 de diciembre de 2026 · 8:00 p.m. · Hotel El Panamá">
+<meta property="og:image" content="assets/portada.jpg">
+<meta name="theme-color" content="#050206">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Monoton&family=Space+Mono:wght@400;700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fuc:#fe0084; --fuc-2:#ff4fae; --ink:#050206; --gris:#908d8e;
+  --paper:#f4f0ec; --ink-2:#141016;
+  --serif:"DM Serif Display", Georgia, serif;
+  --display:"Bebas Neue", Impact, sans-serif;
+  --mono:"Space Mono", ui-monospace, monospace;
+  --script:"Yellowtail", cursive;
+  --disco:"Monoton", var(--display);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--paper);font-family:var(--serif);line-height:1.5;overflow-x:hidden}
+body.locked{overflow:hidden;height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- utilidades ---------- */
+.wrap{width:100%;max-width:560px;margin:0 auto;padding:0 20px;position:relative}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gris)}
+.label.fuc{color:var(--fuc)}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:.04em;line-height:.9}
+.section{position:relative;padding:60px 0;overflow:hidden}
+.halftone{background:#1a0612 url(assets/halftone.jpg) center/cover}
+.halftone::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,2,6,.82),rgba(5,2,6,.55) 40%,rgba(5,2,6,.85))}
+.halftone>*{position:relative}
+.sticker{position:absolute;pointer-events:none;filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));z-index:2}
+.spin{animation:spin 14s linear infinite}
+.bob{animation:bob 6s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-12px) rotate(var(--r,0deg))}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-size:22px;letter-spacing:.08em;
+  padding:14px 26px;border-radius:999px;border:2px solid var(--fuc);background:var(--fuc);color:#fff;text-decoration:none;cursor:pointer;
+  box-shadow:0 0 0 0 rgba(254,0,132,.6),0 8px 24px rgba(254,0,132,.35);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 6px rgba(254,0,132,.18),0 10px 30px rgba(254,0,132,.45)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:var(--gris);box-shadow:none}
+.btn.ghost:hover{border-color:var(--fuc);color:var(--fuc)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- luces disco ---------- */
+.lights{position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:screen;opacity:.5}
+.lights i{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.8);opacity:0;animation:twinkle var(--d,5s) ease-in-out infinite var(--dl,0s)}
+.lights i.f{background:var(--fuc-2);box-shadow:0 0 12px 3px rgba(254,0,132,.9)}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1)}}
+main{position:relative;z-index:1}
+
+/* ---------- intro / sobre ---------- */
+#intro{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 50% 40%,rgba(254,0,132,.28),transparent 60%),var(--ink);transition:opacity .9s ease,visibility .9s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro .rec{width:min(68vw,300px);aspect-ratio:1;margin:0 auto 26px;position:relative}
+#intro .rec img{width:100%;border-radius:50%;box-shadow:0 0 0 6px #111,0 0 60px rgba(254,0,132,.45)}
+#intro .rec::after{content:"XV";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disco);font-size:clamp(34px,10vw,52px);color:var(--fuc);text-shadow:0 0 18px rgba(254,0,132,.8)}
+#intro .rec .arm{position:absolute;top:-6%;right:-10%;width:42%;height:62%;border-right:5px solid var(--gris);border-top:5px solid var(--gris);border-radius:0 30px 0 0;transform:rotate(18deg);transform-origin:top right}
+#intro h1{font-family:var(--script);font-weight:400;font-size:clamp(52px,16vw,84px);line-height:1;color:var(--paper);text-shadow:0 0 22px rgba(254,0,132,.6)}
+#intro p{margin:6px 0 28px}
+
+/* ---------- portada revista ---------- */
+.cover{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate}
+.cover .photo{position:absolute;inset:0;z-index:-2;background:url(assets/portada.jpg) center 18%/cover}
+.cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,2,6,.55) 0%,rgba(5,2,6,0) 30%,rgba(5,2,6,0) 55%,rgba(5,2,6,.92) 100%)}
+.mast{padding:22px 18px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.mast .xv{font-family:var(--disco);font-size:clamp(52px,17vw,90px);line-height:.8;color:var(--fuc);text-shadow:0 0 30px rgba(254,0,132,.55)}
+.mast .meta{text-align:right;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;line-height:1.7;padding-top:8px}
+.mast .meta b{display:block;font-family:var(--display);font-size:26px;letter-spacing:.06em;color:var(--fuc);font-weight:400}
+.coverlines{position:absolute;left:16px;top:44%;display:flex;flex-direction:column;gap:12px;max-width:44%}
+.cl{font-family:var(--display);font-size:clamp(20px,6vw,28px);line-height:.95;letter-spacing:.03em;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.cl small{display:table;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:#fff;background:var(--ink);padding:2px 5px;margin-bottom:4px;text-transform:uppercase}
+.cl.tag{display:inline-block;background:var(--fuc);color:#fff;padding:4px 8px 2px;transform:rotate(-4deg);width:max-content;text-shadow:none}
+.cover .bottom{padding:0 18px 92px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.cover .name .first{font-family:var(--script);font-size:clamp(70px,22vw,120px);line-height:.85;color:#fff;text-shadow:0 0 26px rgba(254,0,132,.7)}
+.cover .name .full{font-family:var(--display);font-size:clamp(16px,4.6vw,22px);letter-spacing:.14em;color:var(--paper);margin-top:6px}
+.barcode{flex:none;background:#fff;color:#000;padding:6px 6px 3px;width:84px;text-align:center;font-family:var(--mono);font-size:8px;letter-spacing:.1em}
+.barcode i{display:block;height:34px;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 3px,#000 3px 4px,transparent 4px 7px,#000 7px 10px,transparent 10px 11px)}
+.scrollcue{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--gris);animation:bob 2.4s ease-in-out infinite}
+
+/* ---------- bienvenida ---------- */
+.welcome{text-align:center;padding-top:96px}
+.welcome .lead{font-size:clamp(22px,6vw,28px);line-height:1.35;margin:18px 0 34px}
+.welcome .lead em{color:var(--fuc);font-style:italic}
+.big-xv{font-family:var(--display);font-size:clamp(46px,14vw,74px);line-height:.9;letter-spacing:.04em}
+.big-xv span{color:var(--fuc)}
+.verse{margin:44px auto 0;max-width:420px;padding:26px 22px;border:1px solid rgba(144,141,142,.35);border-radius:4px;position:relative}
+.verse::before,.verse::after{content:"✦";position:absolute;color:var(--fuc);background:var(--ink);padding:0 10px;left:50%;transform:translateX(-50%)}
+.verse::before{top:-12px}.verse::after{bottom:-12px}
+.verse q{display:block;font-style:italic;font-size:19px;line-height:1.45;quotes:"“" "”"}
+.verse cite{display:block;margin-top:12px;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.24em;color:var(--gris)}
+
+/* ---------- cuenta regresiva ---------- */
+.countdown{text-align:center}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.digit{background:#0d090f;border:1px solid #2a2230;border-radius:10px;padding:14px 4px 10px;position:relative;overflow:hidden;
+  box-shadow:inset 0 -18px 30px rgba(0,0,0,.6)}
+.digit::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.8)}
+.digit b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(38px,12vw,58px);line-height:1;color:var(--fuc);text-shadow:0 0 14px rgba(254,0,132,.7)}
+.digit span{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.datebig{font-family:var(--display);font-size:clamp(40px,13vw,64px);letter-spacing:.06em;line-height:1;margin-top:8px}
+.datebig span{color:var(--fuc)}
+
+/* ---------- foto marco cromado ---------- */
+.framed{position:relative;width:min(100%,400px);margin:0 auto;aspect-ratio:686/900}
+.framed .ph{position:absolute;inset:7.5% 8.5%;border-radius:18px;overflow:hidden;background:#000}
+.framed .ph img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.framed .fr{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.7))}
+.caption{text-align:center;margin-top:22px}
+.caption .s{font-family:var(--script);font-size:40px;color:var(--fuc);line-height:1}
+
+/* ---------- boleto / detalles ---------- */
+.ticket{position:relative;background:var(--paper);color:var(--ink);border-radius:18px;margin-top:28px;
+  -webkit-mask:radial-gradient(circle 14px at 0 64%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 14px at 100% 64%,#0000 98%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 14px at 0 64%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 14px at 100% 64%,#0000 98%,#000) right/51% 100% no-repeat}
+.ticket .top{padding:26px 22px 22px;text-align:center;background:var(--fuc);color:#fff;border-radius:18px 18px 0 0}
+.ticket .top .label{color:rgba(255,255,255,.8)}
+.ticket .top h3{font-family:var(--display);font-weight:400;font-size:44px;letter-spacing:.06em;line-height:1;margin-top:6px}
+.ticket .rows{padding:22px 22px 8px}
+.row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed rgba(5,2,6,.18)}
+.row:last-child{border-bottom:0}
+.row .ic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--fuc);display:grid;place-items:center}
+.row .ic svg{width:18px;height:18px}
+.row .k{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#6b6869}
+.row .v{font-family:var(--display);font-size:25px;letter-spacing:.04em;line-height:1.05}
+.row .v small{display:block;font-family:var(--serif);font-size:15px;letter-spacing:0;color:#3a3638}
+.ticket .perf{border-top:2px dashed rgba(5,2,6,.25);margin:4px 18px 0}
+.ticket .stub{padding:18px 22px 24px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ticket .stub .btn{font-size:19px;padding:12px 20px}
+.ticket .stub .btn.ghost{color:var(--ink);border-color:var(--ink)}
+.ticket .stub .btn.ghost:hover{color:var(--fuc);border-color:var(--fuc)}
+
+/* ---------- dress code ---------- */
+.dress{text-align:center}
+.dress .title{font-family:var(--display);font-size:clamp(56px,17vw,90px);line-height:.85;margin:10px 0 8px;
+  background:linear-gradient(180deg,#fff 0%,#d9d6d7 45%,#7d7a7b 55%,#f2f0f1 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 rgba(254,0,132,.85))}
+.dress p{font-size:16px;color:#d8d3d6;max-width:260px;margin:0 auto}
+.forbid{margin-top:24px}
+.swatches{display:flex;justify-content:center;gap:14px;margin-top:12px}
+.swatches i{width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.3);position:relative}
+.swatches i::after{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:3px;background:#fff;border-radius:2px;transform:translateX(-50%) rotate(45deg);box-shadow:0 0 0 1.5px var(--fuc)}
+.forbid small{display:block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.polaroid.solo{display:block;width:62%;max-width:260px;margin-top:44px}
+.polaroid.solo.left{margin-right:auto;margin-left:4%}
+.polaroid.solo.right{margin-left:auto;margin-right:4%}
+
+/* ---------- galería ---------- */
+.polaroid{background:#fff;padding:9px 9px 34px;border-radius:3px;box-shadow:0 14px 30px rgba(0,0,0,.6);transform:rotate(var(--r,0deg));cursor:zoom-in;transition:transform .3s;position:relative;border:0;text-align:left;color:var(--ink)}
+.polaroid:hover{transform:rotate(0deg) scale(1.03);z-index:3}
+.polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%}
+.polaroid span{position:absolute;left:0;right:0;bottom:7px;text-align:center;font-family:var(--script);font-size:20px;color:var(--ink)}
+.polaroid.tape::before{content:"";position:absolute;top:-10px;left:50%;width:70px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(254,0,132,.75)}
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(5,2,6,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.on{display:flex}
+.lightbox img{max-height:86vh;max-width:100%;border-radius:6px;box-shadow:0 0 60px rgba(254,0,132,.3)}
+.lightbox button{position:absolute;background:none;border:0;color:#fff;font-family:var(--display);font-size:34px;cursor:pointer;padding:10px 16px}
+.lightbox .x{top:10px;right:10px}.lightbox .p{left:4px;top:50%;transform:translateY(-50%)}.lightbox .n{right:4px;top:50%;transform:translateY(-50%)}
+
+/* ---------- carta ---------- */
+.parents{text-align:center}
+.parents .names{font-family:var(--script);font-size:clamp(36px,11vw,50px);line-height:1.1;color:var(--paper);margin-top:12px}
+.parents .names b{display:block;font-family:var(--display);font-weight:400;font-size:22px;color:var(--fuc);margin:6px 0}
+.letter{position:relative;background:var(--paper);color:#221c20;padding:34px 22px 26px;margin-top:34px;border-radius:2px;transform:rotate(-1deg);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);background-image:repeating-linear-gradient(180deg,transparent 0 23px,rgba(144,141,142,.22) 23px 24px)}
+.letter p{font-size:14px;line-height:24px;margin-bottom:12px}
+.letter .sig{font-family:var(--script);font-size:38px;color:var(--fuc);line-height:1;margin-top:4px}
+.letter .stamp{position:absolute;top:-22px;right:18px;font-family:var(--display);font-size:16px;letter-spacing:.12em;color:#fff;background:var(--ink);padding:8px 12px;transform:rotate(5deg);border:2px dashed var(--fuc)}
+
+/* ---------- regalos ---------- */
+.gift{text-align:center}
+.gift .env{width:120px;height:82px;margin:0 auto 18px;position:relative;background:var(--fuc);border-radius:6px;box-shadow:0 12px 26px rgba(254,0,132,.35)}
+.gift .env::before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 49%,rgba(5,2,6,.35) 50%,transparent 52%),linear-gradient(25deg,transparent 49%,rgba(5,2,6,.35) 50%,transparent 52%)}
+.gift .env::after{content:"XV";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--fuc);font-family:var(--display);font-size:16px;display:grid;place-items:center}
+.gift p{font-size:19px;max-width:420px;margin:12px auto 0}
+
+/* ---------- formularios ---------- */
+.card{background:rgba(13,9,15,.86);border:1px solid #2a2230;border-radius:18px;padding:24px 20px;margin-top:20px;backdrop-filter:blur(6px)}
+.card h3{font-family:var(--display);font-weight:400;font-size:34px;letter-spacing:.05em;line-height:1}
+.card p.sub{color:#bdb6ba;font-size:16px;margin:6px 0 18px}
+.field{display:block;margin-bottom:14px}
+.field>span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;font:inherit;font-size:17px;color:var(--paper);background:#050206;border:1px solid #3a3040;border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--fuc);box-shadow:0 0 0 3px rgba(254,0,132,.2)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.choice label{position:relative}
+.choice input{position:absolute;opacity:0}
+.choice span{display:block;text-align:center;font-family:var(--display);font-size:20px;letter-spacing:.06em;padding:12px 8px;border:1px solid #3a3040;border-radius:10px;cursor:pointer;transition:all .2s}
+.choice input:checked+span{background:var(--fuc);border-color:var(--fuc);color:#fff}
+.choice input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.form-actions{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.form-actions .btn{width:100%;font-size:20px;padding:14px 16px;white-space:nowrap}
+.err{color:var(--fuc-2);font-family:var(--mono);font-size:12px;min-height:16px;margin-bottom:6px}
+
+/* ---------- reproductor ---------- */
+.player{position:fixed;right:14px;bottom:14px;z-index:40;display:grid;place-items:center;background:rgba(5,2,6,.9);border:2px solid var(--fuc);
+  border-radius:50%;padding:4px;color:var(--paper);cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.6);opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;font:inherit}
+.player.show{opacity:1;transform:none}
+.player img{width:46px;height:46px;border-radius:50%}
+.player::after{content:"♪";position:absolute;top:-6px;left:-6px;width:20px;height:20px;border-radius:50%;background:var(--fuc);color:#fff;font-size:12px;display:grid;place-items:center}
+.player.playing::after{content:"❚❚";font-size:7px}
+.player.playing img{animation:spin 4s linear infinite}
+.player .t{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;text-align:left}
+.player .t b{display:block;font-family:var(--display);font-size:15px;letter-spacing:.05em;color:var(--fuc);font-weight:400}
+
+footer{padding:70px 0 110px;text-align:center}
+footer .xv{font-family:var(--disco);font-size:64px;color:var(--fuc);line-height:1}
+footer .n{font-family:var(--script);font-size:44px;margin-top:6px}
+footer .credit{margin-top:26px}
+
+@media (min-width:700px){
+  .coverlines{left:6vw}
+  .cover .photo{background-position:center 22%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- Intro tocadiscos -->
+<div id="intro" role="dialog" aria-label="Abrir invitación">
+  <div>
+    <div class="rec"><img class="spin" src="assets/vinilo-estrellas.webp" alt=""><span class="arm"></span></div>
+    <span class="label fuc">Estás invitado a</span>
+    <h1>Mis XV · Helen</h1>
+    <p class="label">12 · 12 · 2026</p>
+    <button class="btn" id="open">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Abrir invitación
+    </button>
+  </div>
+</div>
+
+<div class="lights" id="lights" aria-hidden="true"></div>
+
+<main>
+  <!-- Portada estilo revista -->
+  <header class="cover">
+    <div class="photo" role="img" aria-label="Helen con chaqueta de cuero y top plateado haciendo el signo de paz"></div>
+    <div class="mast">
+      <div class="xv">XV</div>
+      <div class="meta">Edición especial<br>Vol. 15 · Dic 2026<b>Retro Night</b>Panamá</div>
+    </div>
+    <div class="coverlines">
+      <div class="cl"><small>Exclusiva</small>La noche más brillante del año</div>
+      <div class="cl tag">12.12.26</div>
+      <div class="cl"><small>Tendencia</small>Bolas disco, vinilos &amp; mucho brillo</div>
+    </div>
+    <div class="bottom">
+      <div class="name">
+        <div class="first">Helen</div>
+        <div class="full">V. Precilla Muñoz</div>
+      </div>
+      <div class="barcode"><i></i>XV·2026</div>
+    </div>
+    <div class="scrollcue">DESLIZA ↓</div>
+  </header>
+
+  <!-- Bienvenida -->
+  <section class="section welcome">
+    <img class="sticker spin" src="assets/bola.webp" alt="" style="width:120px;top:-30px;right:-34px;animation-duration:22s">
+    <img class="sticker bob" src="assets/nota.webp" alt="" style="width:70px;bottom:120px;right:14px;--r:12deg">
+    <div class="wrap reveal">
+      <span class="label fuc">Con mucha alegría</span>
+      <p class="lead">La familia <em>Precilla Muñoz</em> tiene el honor de compartir este momento tan especial con ustedes.</p>
+      <div class="big-xv">Los <span>XV años</span> de<br>Helen V. Precilla Muñoz</div>
+      <div class="verse">
+        <q>Guárdame como la niña de tus ojos, y escóndeme bajo la sombra de tus alas.</q>
+        <cite>Salmo 17:8</cite>
+      </div>
+      <button class="polaroid tape solo left" style="--r:-4deg" data-i="0"><img src="assets/portada.jpg" alt="Helen haciendo el signo de paz" loading="lazy"><span>Peace &amp; love</span></button>
+    </div>
+  </section>
+
+  <!-- Cuenta regresiva -->
+  <section class="section countdown halftone">
+    <div class="wrap reveal">
+      <span class="label">Sábado</span>
+      <div class="datebig">12 <span>·</span> Diciembre<br><span>2026</span></div>
+      <div class="count" id="count" aria-live="polite">
+        <div class="digit"><b id="d">--</b><span>Días</span></div>
+        <div class="digit"><b id="h">--</b><span>Horas</span></div>
+        <div class="digit"><b id="m">--</b><span>Min</span></div>
+        <div class="digit"><b id="s">--</b><span>Seg</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foto con marco cromado -->
+  <section class="section">
+    <img class="sticker spin" src="assets/bola-fucsia.webp" alt="" style="width:90px;bottom:-14px;left:-30px;animation-duration:18s">
+    <img class="sticker bob" src="assets/casete.webp" alt="" style="width:78px;top:34px;right:4px;--r:14deg">
+    <div class="wrap reveal">
+      <div class="framed">
+        <div class="ph"><img src="assets/pastel.jpg" alt="Helen sosteniendo un pastel con velas y el número 15" loading="lazy"></div>
+        <img class="fr" src="assets/marco.webp" alt="">
+      </div>
+      <div class="caption">
+        <div class="s">Quince velas, un deseo</div>
+        <span class="label">y una noche para recordar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalles: boleto -->
+  <section class="section halftone" id="detalles">
+    <div class="wrap reveal">
+      <div style="text-align:center"><span class="label">Tu pase de entrada</span></div>
+      <div class="ticket">
+        <div class="top">
+          <span class="label">Admite · Invitado especial</span>
+          <h3>Retro XV Party</h3>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <div><div class="k">Fecha</div><div class="v">Sábado 12 de diciembre<small>2026</small></div></div>
+          </div>
+          <div class="row">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div><div class="k">Hora</div><div class="v">8:00 p.m.</div></div>
+          </div>
+          <div class="row">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <div><div class="k">Lugar</div><div class="v">Hotel El Panamá<small>Salón Portobelo · Vía España</small></div></div>
+          </div>
+        </div>
+        <div class="perf"></div>
+        <div class="stub">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hotel%20El%20Panam%C3%A1%2C%20V%C3%ADa%20Espa%C3%B1a%2C%20Panam%C3%A1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Ver ubicación</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV%20a%C3%B1os%20de%20Helen&dates=20261213T010000Z/20261213T060000Z&location=Hotel%20El%20Panam%C3%A1%20-%20Sal%C3%B3n%20Portobelo%2C%20V%C3%ADa%20Espa%C3%B1a%2C%20Panam%C3%A1&details=Fiesta%20retro%20de%20XV%20a%C3%B1os%20de%20Helen%20V.%20Precilla%20Mu%C3%B1oz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M12 13v5M9.5 15.5h5"/></svg>
+            Agendar</a>
+        </div>
+      </div>
+      <button class="polaroid solo right" style="--r:4deg" data-i="1"><img src="assets/vinilos.jpg" alt="Helen acostada entre vinilos y bolas disco" loading="lazy"><span>Llámame</span></button>
+    </div>
+  </section>
+
+  <!-- Dress code -->
+  <section class="section dress">
+    <img class="sticker spin" src="assets/disco-papel.webp" alt="" style="width:110px;top:-30px;left:-40px;animation-duration:9s">
+    <img class="sticker spin" src="assets/bola.webp" alt="" style="width:96px;bottom:30px;right:-18px;animation-duration:20s">
+    <div class="wrap reveal">
+      <span class="label fuc">Código de vestimenta</span>
+      <div class="title">Semiformal</div>
+      <p>Ven lista o listo para brillar en la pista.</p>
+      <div class="forbid">
+        <span class="label fuc">Colores reservados · No usar</span>
+        <div class="swatches" aria-label="Colores prohibidos para invitados: fucsia, negro y gris">
+          <i style="background:#fe0084"></i><i style="background:#050206"></i><i style="background:#908d8e"></i>
+        </div>
+        <small>Fucsia · Negro · Gris</small>
+      </div>
+      <button class="polaroid tape solo left" style="--r:-3deg" data-i="2"><img src="assets/telefono.jpg" alt="Helen con un teléfono retro" loading="lazy"><span>¿Aló?</span></button>
+    </div>
+  </section>
+
+  <!-- Padres + carta -->
+  <section class="section parents">
+    <img class="sticker bob" src="assets/nota.webp" alt="" style="width:50px;top:-16px;left:10px;--r:-10deg">
+    <div class="wrap reveal">
+      <span class="label">Con la bendición de Dios y de mis padres</span>
+      <div class="names">Alejandra Muñoz<b>&amp;</b>Noel Precilla</div>
+
+      <div class="letter" style="text-align:left">
+        <span class="stamp">De: Helen</span>
+        <p>Con mucha alegría quisiera compartir este momento tan especial con ustedes y con el corazón lleno de alegría y gratitud…</p>
+        <p>Quiero compartir con ustedes uno de los momentos más hermosos de mi vida: la celebración de mis XV años. Es para mí un honor contar con tu presencia para celebrar juntos.</p>
+        <p>A mis padres, gracias por su amor incondicional, por cada esfuerzo, por guiar mis pasos y por hacer posible este sueño. Gracias a Dios por bendecirme con una familia maravillosa y por permitirme vivir esta etapa rodeada de tanto amor.</p>
+        <p>Hoy comienza una nueva etapa llena de sueños, ilusiones y nuevas aventuras.</p>
+        <p>A veces la gratitud no se puede medir, solo sentir. ¡Gracias por estar para mí!</p>
+        <p style="margin-bottom:0">Con todo el cariño del mundo,</p>
+        <div class="sig">Helen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mesa de regalos -->
+  <section class="section gift halftone">
+    <div class="wrap reveal">
+      <div class="env" aria-hidden="true"></div>
+      <span class="label fuc">Mesa de regalos</span>
+      <div class="big-xv" style="margin-top:8px">Lluvia de <span>sobres</span></div>
+      <p>Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, el día del evento habrá un buzón para sobres.</p>
+    </div>
+  </section>
+
+  <!-- Playlist + mensaje -->
+  <section class="section" id="playlist">
+    <img class="sticker spin" src="assets/vinilo-estrellas.webp" alt="" style="width:110px;top:-36px;right:-44px;animation-duration:7s">
+    <div class="wrap reveal">
+      <div style="text-align:center">
+        <span class="label">Request line</span>
+        <div class="big-xv" style="margin-top:8px">Arma la <span>playlist</span></div>
+      </div>
+      <div class="card">
+        <h3>¿Qué canción no puede faltar?</h3>
+        <p class="sub">Sugiere el tema que te hará salir a la pista.</p>
+        <label class="field"><span>Canción y artista</span><input id="song" placeholder="Ej. Dancing Queen — ABBA" maxlength="120"></label>
+        <div class="err" id="songErr"></div>
+        <div class="form-actions"><button class="btn" id="sendSong">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18V6l11-2v12" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+          Enviar canción</button></div>
+      </div>
+      <div class="card">
+        <h3>Un mensaje para Helen</h3>
+        <p class="sub">Déjale unas palabras para este día tan especial.</p>
+        <label class="field"><span>Tu nombre</span><input id="msgName" maxlength="60" autocomplete="name"></label>
+        <label class="field"><span>Tu mensaje</span><textarea id="msgText" maxlength="600"></textarea></label>
+        <div class="err" id="msgErr"></div>
+        <div class="form-actions"><button class="btn" id="sendMsg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          Enviar mensaje</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section halftone" id="rsvp">
+    <div class="wrap reveal">
+      <div style="text-align:center">
+        <span class="label fuc">RSVP</span>
+        <div class="big-xv" style="margin-top:8px">Confirma tu <span>asistencia</span></div>
+      </div>
+      <div class="card">
+        <label class="field"><span>Nombre completo</span><input id="rName" maxlength="80" autocomplete="name"></label>
+        <div class="choice" role="radiogroup" aria-label="¿Asistirás?">
+          <label><input type="radio" name="att" value="si" checked><span>¡Sí, ahí estaré!</span></label>
+          <label><input type="radio" name="att" value="no"><span>No podré ir</span></label>
+        </div>
+        <label class="field" id="paxWrap"><span>Número de personas</span>
+          <select id="rPax"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        </label>
+        <div class="err" id="rErr"></div>
+        <div class="form-actions">
+          <button class="btn" id="rWa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>
+            Confirmar por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <img class="spin" src="assets/bola.webp" alt="" style="width:90px;margin:0 auto 16px;animation-duration:16s">
+      <div class="xv">XV</div>
+      <div class="n">Helen</div>
+      <div class="label" style="margin-top:6px">¡Te esperamos! · 12 · 12 · 2026</div>
+      <div class="label credit">Fotografía: Alta Vista · Josué Rodríguez</div>
+    </div>
+  </footer>
+</main>
+
+<!-- Reproductor -->
+<button class="player" id="player" aria-label="Reproducir canción: Slipping Through My Fingers — ABBA" title="Slipping Through My Fingers — ABBA">
+  <img src="assets/vinilo-estrellas.webp" alt="">
+</button>
+<audio id="audio" src="assets/cancion.mp3" loop preload="none"></audio>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" role="dialog" aria-label="Foto ampliada">
+  <button class="x" aria-label="Cerrar">✕</button>
+  <button class="p" aria-label="Anterior">‹</button>
+  <img alt="">
+  <button class="n" aria-label="Siguiente">›</button>
+</div>
+
+<script>
+(() => {
+  const WA = '50766779220';
+  const SONG_SEARCH = 'https://www.youtube.com/results?search_query=ABBA+Slipping+Through+My+Fingers';
+  const EVENT = new Date('2026-12-12T20:00:00-05:00');
+  const $ = s => document.querySelector(s);
+
+  /* luces disco */
+  const L = $('#lights');
+  for (let i = 0; i < 26; i++) {
+    const d = document.createElement('i');
+    if (i % 3 === 0) d.className = 'f';
+    d.style.left = Math.random() * 100 + '%';
+    d.style.top = Math.random() * 100 + '%';
+    d.style.setProperty('--d', (3 + Math.random() * 5).toFixed(1) + 's');
+    d.style.setProperty('--dl', (Math.random() * 5).toFixed(1) + 's');
+    L.appendChild(d);
+  }
+
+  /* música */
+  const audio = $('#audio'), player = $('#player');
+  let hasAudio = true;
+  audio.addEventListener('error', () => { hasAudio = false; player.classList.remove('playing'); });
+  function play() {
+    if (!hasAudio) return;
+    audio.play().then(() => player.classList.add('playing')).catch(() => {});
+  }
+  player.addEventListener('click', () => {
+    if (!hasAudio) { window.open(SONG_SEARCH, '_blank', 'noopener'); return; }
+    if (audio.paused) play(); else { audio.pause(); player.classList.remove('playing'); }
+  });
+
+  /* abrir */
+  $('#open').addEventListener('click', () => {
+    $('#intro').classList.add('gone');
+    document.body.classList.remove('locked');
+    player.classList.add('show');
+    play();
+  });
+
+  /* reveal */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* cuenta regresiva */
+  const pad = n => String(n).padStart(2, '0');
+  function tick() {
+    let t = Math.max(0, EVENT - Date.now()) / 1000;
+    const d = Math.floor(t / 86400); t -= d * 86400;
+    const h = Math.floor(t / 3600); t -= h * 3600;
+    const m = Math.floor(t / 60); const s = Math.floor(t - m * 60);
+    $('#d').textContent = d; $('#h').textContent = pad(h); $('#m').textContent = pad(m); $('#s').textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* galería */
+  const shots = [...document.querySelectorAll('.polaroid img')].map(i => ({ src: i.src, alt: i.alt }));
+  const lb = $('#lb'), lbImg = lb.querySelector('img');
+  let cur = 0;
+  const show = i => { cur = (i + shots.length) % shots.length; lbImg.src = shots[cur].src; lbImg.alt = shots[cur].alt; };
+  document.querySelectorAll('.polaroid').forEach(p => p.addEventListener('click', () => { show(+p.dataset.i); lb.classList.add('on'); }));
+  lb.querySelector('.x').onclick = () => lb.classList.remove('on');
+  lb.querySelector('.p').onclick = e => { e.stopPropagation(); show(cur - 1); };
+  lb.querySelector('.n').onclick = e => { e.stopPropagation(); show(cur + 1); };
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('on'); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') lb.classList.remove('on');
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  /* envíos */
+  const wa = txt => window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+  const val = s => $(s).value.trim();
+
+  $('#sendSong').onclick = () => {
+    const s = val('#song');
+    if (!s) { $('#songErr').textContent = 'Escribe una canción ✦'; return; }
+    $('#songErr').textContent = '';
+    wa('🎶 Para la playlist de los XV de Helen sugiero: ' + s);
+  };
+  $('#sendMsg').onclick = () => {
+    const n = val('#msgName'), t = val('#msgText');
+    if (!t) { $('#msgErr').textContent = 'Escribe tu mensaje ✦'; return; }
+    $('#msgErr').textContent = '';
+    wa('💌 Mensaje para Helen' + (n ? ' de ' + n : '') + ':\n\n' + t);
+  };
+
+  const att = () => document.querySelector('input[name=att]:checked').value;
+  document.querySelectorAll('input[name=att]').forEach(r => r.addEventListener('change', () => {
+    $('#paxWrap').style.display = att() === 'si' ? '' : 'none';
+  }));
+  function rsvpText() {
+    const n = val('#rName');
+    if (!n) { $('#rErr').textContent = 'Escribe tu nombre ✦'; return null; }
+    $('#rErr').textContent = '';
+    let t = att() === 'si'
+      ? `✨ ¡Confirmo mi asistencia a los XV de Helen!\nNombre: ${n}\nPersonas: ${$('#rPax').value}`
+      : `Hola, lamentablemente no podré asistir a los XV de Helen.\nNombre: ${n}`;
+    return t;
+  }
+  $('#rWa').onclick = () => { const t = rsvpText(); if (t) wa(t); };
+})();
+</script>
+</body>
+</html>

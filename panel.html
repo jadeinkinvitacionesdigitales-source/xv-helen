@@ -116,6 +116,7 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.05e
 </header>
 
 <div class="wrap">
+  <p class="label" id="loading" style="text-align:center;margin-top:40px" hidden>Cargando el panel…</p>
   <form class="card" id="login" hidden>
     <label class="field"><span>Clave del panel</span><input id="clave" type="password" required autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false"></label>
     <button class="btn" type="submit" style="width:100%">Entrar</button>
@@ -432,7 +433,7 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.05e
   $('login').addEventListener('submit', async e => {
     e.preventDefault();
     clave = $('clave').value.trim();
-    $('loginMsg').textContent = 'Verificando…';
+    $('loginMsg').textContent = 'Verificando… (puede tardar unos segundos)';
     let ok = await load();
     // El teclado del celular a veces pone mayúscula inicial: reintenta en minúsculas
     if (ok === false && clave !== clave.toLowerCase()) { clave = clave.toLowerCase(); ok = await load(); }
@@ -443,7 +444,7 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.05e
   if (!API) { $('noApi').hidden = false; $('logout').hidden = true; openApp(); load(); }
   else {
     const saved = store.get(KEY);
-    if (saved) { clave = saved; load().then(ok => { if (ok) openApp(); else { store.set(KEY, null); $('login').hidden = false; } }); }
+    if (saved) { clave = saved; $('loading').hidden = false; load().then(ok => { $('loading').hidden = true; if (ok) openApp(); else { store.set(KEY, null); $('login').hidden = false; } }); }
     else $('login').hidden = false;
   }
 })();

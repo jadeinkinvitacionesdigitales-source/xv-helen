@@ -115,7 +115,7 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.05e
 
 <div class="wrap">
   <form class="card" id="login" hidden>
-    <label class="field"><span>Clave del panel</span><input id="clave" type="password" required autocomplete="current-password"></label>
+    <label class="field"><span>Clave del panel</span><input id="clave" type="password" required autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false"></label>
     <button class="btn" type="submit" style="width:100%">Entrar</button>
     <p class="msg" id="loginMsg"></p>
   </form>
@@ -424,7 +424,9 @@ h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.05e
     e.preventDefault();
     clave = $('clave').value.trim();
     $('loginMsg').textContent = 'Verificando…';
-    const ok = await load();
+    let ok = await load();
+    // El teclado del celular a veces pone mayúscula inicial: reintenta en minúsculas
+    if (ok === false && clave !== clave.toLowerCase()) { clave = clave.toLowerCase(); ok = await load(); }
     if (ok) { store.set(KEY, clave); $('loginMsg').textContent = ''; openApp(); }
     else $('loginMsg').textContent = ok === false ? 'Clave incorrecta.' : 'No se pudo conectar. Inténtalo de nuevo.';
   });

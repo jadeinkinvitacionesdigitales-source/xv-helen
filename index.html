@@ -191,10 +191,28 @@ main{position:relative;z-index:1}
 
 /* ---------- regalos ---------- */
 .gift{text-align:center}
-.gift .env{width:120px;height:82px;margin:0 auto 18px;position:relative;background:var(--fuc);border-radius:6px;box-shadow:0 12px 26px rgba(254,0,132,.35)}
-.gift .env::before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 49%,rgba(5,2,6,.35) 50%,transparent 52%),linear-gradient(25deg,transparent 49%,rgba(5,2,6,.35) 50%,transparent 52%)}
-.gift .env::after{content:"XV";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--fuc);font-family:var(--display);font-size:16px;display:grid;place-items:center}
-.gift p{font-size:19px;max-width:420px;margin:12px auto 0}
+.gift .lead2{font-size:18px;max-width:400px;margin:14px auto 0;color:#e9e4e7}
+.envelope{position:relative;width:230px;height:150px;margin:104px auto 30px;perspective:800px}
+.envelope .back{position:absolute;inset:0;background:#c9006a;border-radius:8px;box-shadow:0 18px 40px rgba(254,0,132,.35)}
+.envelope .card{position:absolute;left:14px;right:14px;top:10px;height:130px;background:var(--paper);color:var(--ink);border-radius:6px;padding:16px 10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform 1s cubic-bezier(.2,.8,.2,1) .5s;z-index:2}
+.envelope .card b{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.05em;line-height:1}
+.envelope .card i{font-family:var(--script);font-style:normal;font-size:24px;color:var(--fuc);line-height:1}
+.envelope .card small{font-family:var(--mono);font-size:8px;letter-spacing:.24em;color:#6b6869;text-transform:uppercase}
+.envelope .front{position:absolute;inset:0;z-index:3;border-radius:8px;overflow:hidden;
+  background:linear-gradient(to top right,var(--fuc) 50%,transparent 50.4%) left/50.2% 100% no-repeat,linear-gradient(to top left,#ff1a92 50%,transparent 50.4%) right/50.2% 100% no-repeat}
+.envelope .front::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,#e60078 0,#e60078 100%);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.envelope .flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;background:#ff2b9c;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s ease,z-index 0s .35s}
+.envelope .seal{position:absolute;left:50%;top:44%;z-index:5;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--fuc);
+  font-family:var(--display);font-size:20px;display:grid;place-items:center;border:2px solid var(--gris);transition:opacity .3s}
+.reveal.in .envelope .flap{transform:rotateX(180deg);z-index:1}
+.reveal.in .envelope .seal{opacity:0}
+.reveal.in .envelope .card{transform:translateY(-78px)}
+.gift-steps{display:grid;gap:12px;max-width:400px;margin:26px auto 0;text-align:left}
+.gift-steps div{display:flex;gap:14px;align-items:center;background:rgba(5,2,6,.7);border:1px solid #2a2230;border-radius:14px;padding:14px 16px}
+.gift-steps b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--fuc);color:#fff;font-family:var(--display);font-weight:400;font-size:20px;display:grid;place-items:center}
+.gift-steps span{font-size:15px;line-height:1.4;color:#e9e4e7}
+.gift .thanks{font-family:var(--script);font-size:34px;color:var(--fuc);margin-top:24px;line-height:1}
 
 /* ---------- formularios ---------- */
 .card{background:rgba(13,9,15,.86);border:1px solid #2a2230;border-radius:18px;padding:24px 20px;margin-top:20px;backdrop-filter:blur(6px)}
@@ -404,13 +422,25 @@ footer .credit{margin-top:26px}
     </div>
   </section>
 
-  <!-- Mesa de regalos -->
-  <section class="section gift halftone">
+  <!-- Obsequios -->
+  <section class="section gift halftone" id="obsequios">
     <div class="wrap reveal">
-      <div class="env" aria-hidden="true"></div>
-      <span class="label fuc">Mesa de regalos</span>
+      <span class="label fuc">Obsequios</span>
       <div class="big-xv" style="margin-top:8px">Lluvia de <span>sobres</span></div>
-      <p>Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, el día del evento habrá un buzón para sobres.</p>
+      <div class="envelope" aria-hidden="true">
+        <div class="back"></div>
+        <div class="card"><small>Para</small><b>Helen</b><i>con cariño</i></div>
+        <div class="front"></div>
+        <div class="flap"></div>
+        <div class="seal">XV</div>
+      </div>
+      <p class="lead2">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, tendremos una lluvia de sobres el día del evento.</p>
+      <div class="gift-steps">
+        <div><b>1</b><span>Coloca tu obsequio en efectivo dentro de un sobre.</span></div>
+        <div><b>2</b><span>Escribe tu nombre en el sobre para poder agradecerte.</span></div>
+        <div><b>3</b><span>Deposítalo en el buzón que estará en el salón.</span></div>
+      </div>
+      <div class="thanks">¡Gracias por tu cariño!</div>
     </div>
   </section>
 

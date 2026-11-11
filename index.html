@@ -192,22 +192,14 @@ main{position:relative;z-index:1}
 /* ---------- regalos ---------- */
 .gift{text-align:center}
 .gift .lead2{font-size:18px;max-width:400px;margin:14px auto 0;color:#e9e4e7}
-.envelope{position:relative;width:230px;height:150px;margin:104px auto 30px;perspective:800px}
+.envelope{position:relative;width:230px;height:150px;margin:30px auto 26px;perspective:800px}
 .envelope .back{position:absolute;inset:0;background:#c9006a;border-radius:8px;box-shadow:0 18px 40px rgba(254,0,132,.35)}
-.envelope .card{position:absolute;left:14px;right:14px;top:10px;height:130px;background:var(--paper);color:var(--ink);border-radius:6px;padding:16px 10px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform 1s cubic-bezier(.2,.8,.2,1) .5s;z-index:2}
-.envelope .card b{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.05em;line-height:1}
-.envelope .card i{font-family:var(--script);font-style:normal;font-size:24px;color:var(--fuc);line-height:1}
-.envelope .card small{font-family:var(--mono);font-size:8px;letter-spacing:.24em;color:#6b6869;text-transform:uppercase}
 .envelope .front{position:absolute;inset:0;z-index:3;border-radius:8px;overflow:hidden;
   background:linear-gradient(to top right,var(--fuc) 50%,transparent 50.4%) left/50.2% 100% no-repeat,linear-gradient(to top left,#ff1a92 50%,transparent 50.4%) right/50.2% 100% no-repeat}
 .envelope .front::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,#e60078 0,#e60078 100%);clip-path:polygon(0 100%,50% 0,100% 100%)}
-.envelope .flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;background:#ff2b9c;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s ease,z-index 0s .35s}
+.envelope .flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;background:#ff2b9c;clip-path:polygon(0 0,100% 0,50% 100%)}
 .envelope .seal{position:absolute;left:50%;top:44%;z-index:5;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--fuc);
-  font-family:var(--display);font-size:20px;display:grid;place-items:center;border:2px solid var(--gris);transition:opacity .3s}
-.reveal.in .envelope .flap{transform:rotateX(180deg);z-index:1}
-.reveal.in .envelope .seal{opacity:0}
-.reveal.in .envelope .card{transform:translateY(-78px)}
+  font-family:var(--display);font-size:20px;display:grid;place-items:center;border:2px solid var(--gris)}
 .gift-steps{display:grid;gap:12px;max-width:400px;margin:26px auto 0;text-align:left}
 .gift-steps div{display:flex;gap:14px;align-items:center;background:rgba(5,2,6,.7);border:1px solid #2a2230;border-radius:14px;padding:14px 16px}
 .gift-steps b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--fuc);color:#fff;font-family:var(--display);font-weight:400;font-size:20px;display:grid;place-items:center}
@@ -429,7 +421,6 @@ footer .credit{margin-top:26px}
       <div class="big-xv" style="margin-top:8px">Lluvia de <span>sobres</span></div>
       <div class="envelope" aria-hidden="true">
         <div class="back"></div>
-        <div class="card"><small>Para</small><b>Helen</b><i>con cariño</i></div>
         <div class="front"></div>
         <div class="flap"></div>
         <div class="seal">XV</div>
